@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Результат</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+<body>
+<div class="container">
+    <h1>Информация о студенте</h1>
+
+    <div class="result-item">
+        <span>ID:</span> <th:block th:text="${student.id}"></th:block>
+    </div>
+
+    <div class="result-item">
+        <span>ФИО:</span> <th:block th:text="${student.lastName} + ' ' + ${student.name} + ' ' + ${student.middleName}"></th:block>
+    </div>
+
+    <div class="result-item">
+        <span>E-mail:</span> <th:block th:text="${student.email}"></th:block>
+    </div>
+
+    <div class="result-item">
+        <span>Сформированная группа:</span> <th:block th:text="${student.groupName}"></th:block>
+    </div>
+
+    <div class="result-item">
+        <span>Логин для портала:</span> <th:block th:text="${student.login}"></th:block>
+    </div>
+
+    <div class="button-group">
+        <a th:href="@{/form}" class="btn">Ввести новую информацию</a>
+    </div>
+</div>
+</body>
+</html>
